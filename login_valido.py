@@ -33,11 +33,11 @@ def test_login_valido():
 
         # Aumenta o tempo de espera se necessário
         WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, 'success-message'))  # Localize o elemento que contém a mensagem de sucesso
+            EC.presence_of_element_located((By.ID, 'success-message'))  # Localize o elemento que contém a mensagem de sucesso
         )
 
         # Verifica se a mensagem de sucesso aparece
-        success_message = driver.find_element(By.CLASS_NAME, 'success-message').text
+        success_message = driver.find_element(By.ID, 'success-message').text
         assert "Login efetuado com sucesso" in success_message
 
     finally:
