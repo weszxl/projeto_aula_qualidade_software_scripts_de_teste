@@ -39,6 +39,8 @@ def test_login_valido():
         # Verifica se a mensagem de sucesso aparece
         success_message = driver.find_element(By.ID, 'success-message').text
         assert "Login efetuado com sucesso" in success_message
+        
+        time.sleep(5)
 
     finally:
         driver.quit()

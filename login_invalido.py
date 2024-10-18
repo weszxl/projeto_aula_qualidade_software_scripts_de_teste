@@ -33,8 +33,10 @@ def test_login_invalido():
 
         # Verifica se a mensagem "Não há usuários cadastrados" aparece
         assert WebDriverWait(driver, 10).until(
-            EC.text_to_be_present_in_element((By.TAG_NAME, 'body'), "Não há usuários cadastrados")
+            EC.text_to_be_present_in_element((By.ID, 'error-message'), "Não há usuários cadastrados")
         )
+        
+        time.sleep(5)
 
     finally:
         driver.quit()
